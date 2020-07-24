@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>fun bankq</title>
+    <title>fun bank</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <link rel="stylesheet" href="style.css">
     <script src="fun_bank.js"></script>
@@ -27,19 +27,19 @@
            <div class="col-md-4">
                <div class="deposit status">
                 <h5>deposit</h5>
-                <h2>$ <span id="currentDiposit" >00</span></h2>
+                <h2>$ <span id="currentDiposit">00</span></h2>
                </div>
            </div>
            <div class="col-md-4">
                <div class="withdraw status">
                 <h5>withdraw</h5>
-                <h2>$00</h2>
+                <h2>$ <span id="withdrawBlance">00</span></h2>
                </div>
            </div>
            <div class="col-md-4">
                <div class="balance status">
                 <h5>balacne</h5>
-                <h2>$1200</h2>
+                <h2>$ <span id="currentBalance">1200</span></h2>
                </div>
            </div>
        </div>
@@ -51,7 +51,8 @@
               <h5 class="card-title">Deposit</h5>
               <input type="text" class="form-control" id="depositAmount" placeholder="$ amount you wet to deposit">
               <br>
-              <a href="#" id="adddeposit" class="btn btn-success">Deposit</a>
+              <button id="adddeposit" class="btn btn-success">Deposit</button>
+              
             </div>
           </div>
         </div>
@@ -59,9 +60,9 @@
           <div class="card col_2">
             <div class="card-body">
               <h5 class="card-title">Withdraw</h5>
-              <input type="text" class="form-control" id="" placeholder="$ amount you went to withdraw">
+              <input type="text" class="form-control" id="withdrawAmount" placeholder="$ amount you went to withdraw">
               <br>
-              <a href="#" class="btn btn-success">Withdraw</a>
+              <button id="addWithdraw" class="btn btn-success">Withdraw</button>
             </div>
           </div>
         </div>
@@ -81,18 +82,31 @@
         })
 
 //   deposit event handler--------
-        const deposteBtn = document.getElementById("adddeposit");
-        deposteBtn.addEventListener("click", function(){
-            const  depositAmount = document.getElementById("depositAmount").value;
-         const depositNumber = parseFloat("depositAmount");
+      const dipositBtn = document.getElementById("adddeposit");
+      dipositBtn.addEventListener("click", function(){
+         const depositAmount = document.getElementById("depositAmount").value;
+        const depositNumber =  parseFloat(depositAmount);
 
-         const currentValue = document.getElementById("currentDiposit").innerText;
-         const correntNumber = parseFloat("currentValue");
-         const   totalDeposit = depositNumber + correntNumber;
-         
-         document.getElementById("currentDiposit").innerText = totalDeposit;
+     
+      
+        updateSpanTag("currentDiposit", depositNumber)
 
-        })
+        updateSpanTag("currentBalance", depositNumber)
+
+        document.getElementById("depositAmount").value = "";
+
+      })
+
+
+      function updateSpanTag(id, depositNumber){
+        const current = document.getElementById(id).innerText;
+        const currentNumber = parseFloat (current);
+        const totalbalance = depositNumber + currentNumber;
+        document.getElementById(id).innerText = totalbalance;
+      }
+
+
+
 </script>
 
 
