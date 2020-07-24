@@ -1,10 +1,15 @@
 body{
     padding: 100px;
 }
-.container{
-    padding:100px;
+.submit_area{
+    width: 780px;
+    padding: 50px;
+    border-radius: 10px;
+    box-shadow: 5px 4px 10px #9f9d9d;
+    margin: 0 auto;
+    margin-top: 100px;
+    color: #6b6b6b;
 }
-.text-center{
-    color:rgb(85, 85, 85);
-    padding: 100px 0px;
+#transition_area{
+    display: none;
 }

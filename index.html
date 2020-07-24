@@ -6,36 +6,40 @@
     <title>fun bankq</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <link rel="stylesheet" href="style.css">
+    <script src="fun_bank.js"></script>
 </head>
 <body>
-    <div class="contaner">
-        <h1 class="text-center">welcome to fun  bank</h1>
-
-        
+    <div id="login_area">
+        <h1 class="text-center">Welcome to fun bank</h1>
+        <div class="submit_area">
+            <h2>login</h2>
+            <br>
+            <input type="text" class="form-control" placeholder="Enter your emil">
+            <br>
+            <input type="password" class="form-control" placeholder="Entar your password">
+            <br>
+            <button id="login" class=" btn btn-secondary">Enter</button>
+        </div>
     </div>
-    <div class="row">
-        <div class="col-sm-6">
-          <div class="card">
-            <div class="card-body">
-              <h5 class="card-title">Special title treatment</h5>
-              <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-              <a href="#" class="btn btn-primary">Go somewhere</a>
-            </div>
-          </div>
-        </div>
-        <div class="col-sm-6">
-          <div class="card">
-            <div class="card-body">
-              <h5 class="card-title">Special title treatment</h5>
-              <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-              <a href="#" class="btn btn-primary">Go somewhere</a>
-            </div>
-          </div>
-        </div>
-      </div>
+
+    <div id="transition_area">
+       
+    </div>
 
 
+<script>
+        const subbtn = document.getElementById("login");
+        subbtn.addEventListener("click",function(){
+        var loginArea = document.getElementById("login_area");
+        loginArea.style.display = "none";
+        var transitionArea = document.getElementById("transition_area");
+        transitionArea.style.display = "block"
 
+
+        })
+
+  
+</script>
 
 
 
