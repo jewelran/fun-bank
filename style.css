@@ -13,3 +13,26 @@ body{
 #transition_area{
     display: none;
 }
+.deposit{
+    color: white;
+    background-color: slateblue;
+}
+.withdraw{
+    color: white;
+    background-color: lightsalmon;
+}
+.balance{
+    color: white;
+    background-color: orange;
+}
+.status{
+    margin: 20px 0px;
+    padding: 50px  50px;
+    border-radius: 10px;
+    text-align: center;
+}
+.col_1,.col_2{
+    margin-top: 30px;
+    box-shadow: 5px 5px 10px #888888;
+}
+

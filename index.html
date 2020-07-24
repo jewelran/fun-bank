@@ -21,12 +21,54 @@
             <button id="login" class=" btn btn-secondary">Enter</button>
         </div>
     </div>
-
+<!-- transition  card -->
     <div id="transition_area">
-       
+       <div class="row">
+           <div class="col-md-4">
+               <div class="deposit status">
+                <h5>deposit</h5>
+                <h2>$ <span id="currentDiposit" >00</span></h2>
+               </div>
+           </div>
+           <div class="col-md-4">
+               <div class="withdraw status">
+                <h5>withdraw</h5>
+                <h2>$00</h2>
+               </div>
+           </div>
+           <div class="col-md-4">
+               <div class="balance status">
+                <h5>balacne</h5>
+                <h2>$1200</h2>
+               </div>
+           </div>
+       </div>
+    <!-- transition controler -->
+       <div class="row">
+        <div class="col-md-6 " >
+          <div class="card col_1">
+            <div class="card-body">
+              <h5 class="card-title">Deposit</h5>
+              <input type="text" class="form-control" id="depositAmount" placeholder="$ amount you wet to deposit">
+              <br>
+              <a href="#" id="adddeposit" class="btn btn-success">Deposit</a>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-6 ">
+          <div class="card col_2">
+            <div class="card-body">
+              <h5 class="card-title">Withdraw</h5>
+              <input type="text" class="form-control" id="" placeholder="$ amount you went to withdraw">
+              <br>
+              <a href="#" class="btn btn-success">Withdraw</a>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
 
-
+ 
 <script>
         const subbtn = document.getElementById("login");
         subbtn.addEventListener("click",function(){
@@ -38,7 +80,19 @@
 
         })
 
-  
+//   deposit event handler--------
+        const deposteBtn = document.getElementById("adddeposit");
+        deposteBtn.addEventListener("click", function(){
+            const  depositAmount = document.getElementById("depositAmount").value;
+         const depositNumber = parseFloat("depositAmount");
+
+         const currentValue = document.getElementById("currentDiposit").innerText;
+         const correntNumber = parseFloat("currentValue");
+         const   totalDeposit = depositNumber + correntNumber;
+         
+         document.getElementById("currentDiposit").innerText = totalDeposit;
+
+        })
 </script>
 
 
