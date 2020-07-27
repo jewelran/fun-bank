@@ -84,18 +84,35 @@
 //   deposit event handler--------
       const dipositBtn = document.getElementById("adddeposit");
       dipositBtn.addEventListener("click", function(){
-         const depositAmount = document.getElementById("depositAmount").value;
-        const depositNumber =  parseFloat(depositAmount);
-
-     
       
+        const depositNumber = getInputNumber("depositAmount")
+
         updateSpanTag("currentDiposit", depositNumber)
 
         updateSpanTag("currentBalance", depositNumber)
 
-        document.getElementById("depositAmount").value = "";
+        document.getElementById("withdrawBlance").value = "";
 
       })
+
+
+      
+     const withdrawBtn = document.getElementById("addWithdraw");
+     withdrawBtn.addEventListener("click", function(){
+    
+      const withdrawNumber = getInputNumber("withdrawAmount");
+      console.log(withdrawNumber);
+      
+
+     })
+
+     function getInputNumber(id){
+      const withdrowAmount = document.getElementById(id).value;
+     const withdrawNumber = parseFloat(withdrowAmount);
+
+      return withdrawNumber
+     }
+
 
 
       function updateSpanTag(id, depositNumber){
