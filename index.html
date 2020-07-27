@@ -91,7 +91,7 @@
 
         updateSpanTag("currentBalance", depositNumber)
 
-        document.getElementById("withdrawBlance").value = "";
+        document.getElementById("depositAmount").value = "";
 
       })
 
@@ -101,7 +101,10 @@
      withdrawBtn.addEventListener("click", function(){
     
       const withdrawNumber = getInputNumber("withdrawAmount");
-      console.log(withdrawNumber);
+      updateSpanTag("withdrawBlance",withdrawNumber);
+
+      updateSpanTag("currentBalance", -1 * withdrawNumber);
+      document.getElementById("withdrawAmount").value= "";
       
 
      })
